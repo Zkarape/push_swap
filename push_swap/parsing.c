@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:34 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/02 21:50:52 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/03 18:38:45 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	nothing_but_int(char *str)
 		return (2);
 	while (str[++i] && ((str[i] >= '0' && str[i] <= '9') || str[i] == '+'
 			|| str[i] == ' ' || str[i] == '\t' || str[i] == '-'));
-	if (!str[i])//&& ft_atoi(str))
+	if (!str[i])
 		return (1);
 	else
 		return (0);
@@ -60,10 +60,10 @@ void	parsing(t_struct *push)
 	}
 	push->arr = ft_split(push->str, ' ');
 	if (!push->arr)
-		return;
+		return ;
 	i = -1;
 	while (push->arr[++i])
-		if (!nothing_but_int(push->arr[i]) )//|| !ft_atoi(push->arr[i]))
+		if (!nothing_but_int(push->arr[i]))
 			ft_error("not int");
 	while (++k < i)
 		push->index[k] = ft_atoi(push->arr[k]);

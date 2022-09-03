@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/02 16:47:19 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/03 18:30:27 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ t_list	*ft_lstnew(int	x);
 void	ft_lstadd_back(t_list *listik, t_list *new_one);
 int		sab(t_list *listik);
 void	ft_lstadd_front(t_list **listik, t_list *new_one);
-int		pab(t_list *listik_a, t_list *listik_b);
-int	rab(t_list *listik);
+int		pab(t_list **listik_a, t_list **listik_b);
+int	rab(t_list **listik);
 int	rrab(t_list **listik);
 
 #endif

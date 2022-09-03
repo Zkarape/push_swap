@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:38:43 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/01 22:10:31 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/03 18:39:18 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_atoi(const char *str)
 	return (res * min);
 }
 
-t_list	*ft_lstnew(int	x)
+t_list	*ft_lstnew(int x)
 {
 	t_list	*t;
 

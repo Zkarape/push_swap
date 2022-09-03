@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:16:24 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/02 21:51:00 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/03 18:34:10 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sort(t_struct *push)
 	i = 1;
 	while (i < push->len)
 	{
-		if (push->index[i] > push->index[i - 1])
+		if (push->index[i] < push->index[i - 1])
 		{
 			tmp = push->index[i];
 			push->index[i] = push->index[i - 1];
