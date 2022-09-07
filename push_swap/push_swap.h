@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/03 18:30:27 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/05 18:42:02 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ typedef	struct	s_struct
 	int		*res;
 }	t_struct;
 
+void	add_to_list(t_list *listik, t_struct *push);
+void	indexing(t_list *listik, t_struct *push);
 void	sort(t_struct *push);
 char	**ft_split(char *str, char c);
 int		ft_atoi(const char *str);
