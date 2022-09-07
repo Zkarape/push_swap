@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 17:58:33 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/07 18:35:19 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/07 22:06:09 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,26 +40,29 @@ void	algo_rythm(t_struct *push, t_list *listik_a, t_list *listik_b)
 	i = -1;
 	counter = 0;
 	head = listik_a;
-	if (sorted_or_not(push, listik_a))
-		ft_error("already sorted");
+	//if (sorted_or_not(push, listik_a))
+	//	ft_error("already sorted");
 	while (!sorted_or_not(push, listik_a))
 	{
 		if (listik_a->index <= counter)
 		{
+			printf("mta1\n");
 			if (!pab(&listik_b, &listik_a))
 				ft_error("error appeared!");
 			if(!rab(&listik_b))
 				ft_error("error appeared!");
 			counter++;
 		}
-		else if (listik_a->index <= counter++)
+		else if (listik_a->index <= counter + 1)
 		{
+			printf("mta2\n");
 			if (!pab(&listik_b, &listik_a))
 				ft_error("error appeared!");
 			counter++;
 		}
 		else
 		{
+			printf("mta3\n");
 			if(!rab(&listik_b))
 				ft_error("error appeared!");
 		}
@@ -87,14 +90,19 @@ int	main(int argc, char **argv)
 	add_to_list(a, push);
 	indexing(a, push);
 //	pab(&b, &a);
-	pab(&a, &b);
-//	rab(&a);
-//	algo_rythm(push, a, b);
-	while (b)
+//	pab(&a, &b);
+//	sab(a);
+	algo_rythm(push, a, b);
+	while (a)
 	{
-		printf("index_b == %d x == %d\n", b->index, b->x);
-		b = b->next;
+		printf("index_a == %d x == %d\n", a->index, a->x);
+		a = a->next;
 	}
+//	while (b)
+//	{
+//		printf("index_b == %d x == %d\n", b->index, b->x);
+//		b = b->next;
+//	}
 //	while (a)
 //	{
 //		printf("index_a == %d x == %d\n", a->index, a->x);
