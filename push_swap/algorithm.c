@@ -31,6 +31,39 @@ int	sorted_or_not(t_struct *push, t_list *listik)
 	return (0);//not sorted
 }
 
+void	fill_b(t_struct *push, t_list *listik_b, t_list *listik_a)
+{
+	int 	counter;
+	t_list	*list_a;
+	t_list	*list_b;
+
+	counter = 0;
+	list_a = listik_a;
+	list_b = listik_b;
+	if (list_a->index <= counter)
+	{
+		printf("mta1\n");
+		if (!pab(&list_b, &list_a, 0))
+			ft_error("error appeared!");
+		if(!rab(&list_b, 0))
+			ft_error("error appeared!");
+		counter++;
+	}
+	else if (list_a->index <= counter + 1)
+	{
+		printf("mta2\n");
+		if (!pab(&list_b, &list_a, 0))
+			ft_error("error appeared!");
+		counter++;
+	}
+	else
+	{
+		printf("mta3\n");
+		if(!rab(&list_b, 0))
+			ft_error("error appeared!");
+	}
+}
+
 void	algo_rythm(t_struct *push, t_list *listik_a, t_list *listik_b)
 {
 	int		i;
@@ -40,32 +73,10 @@ void	algo_rythm(t_struct *push, t_list *listik_a, t_list *listik_b)
 	i = -1;
 	counter = 0;
 	head = listik_a;
-	//if (sorted_or_not(push, listik_a))
-	//	ft_error("already sorted");
+	if (sorted_or_not(push, listik_a))
+		ft_error("already sorted");
 	while (!sorted_or_not(push, listik_a))
 	{
-		if (listik_a->index <= counter)
-		{
-			printf("mta1\n");
-			if (!pab(&listik_b, &listik_a))
-				ft_error("error appeared!");
-			if(!rab(&listik_b))
-				ft_error("error appeared!");
-			counter++;
-		}
-		else if (listik_a->index <= counter + 1)
-		{
-			printf("mta2\n");
-			if (!pab(&listik_b, &listik_a))
-				ft_error("error appeared!");
-			counter++;
-		}
-		else
-		{
-			printf("mta3\n");
-			if(!rab(&listik_b))
-				ft_error("error appeared!");
-		}
 	}
 }
 

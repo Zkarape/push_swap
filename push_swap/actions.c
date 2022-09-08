@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	sab(t_list *listik)
+int	sab(t_list *listik, int flag)
 {
 	t_list	*s;
 
@@ -22,12 +22,16 @@ int	sab(t_list *listik)
 		s->index = s->index + s->next->index;
 		s->next->index = s->index - s->next->index;
 		s->index = s->index - s->next->index;
+		if (flag == 1)
+			write(1, "sa\n", 3);
+		else if (flag == 0)
+			write(1, "sb\n", 3);
 		return (1);
 	}
 	return (0);
 }
 
-int	pab(t_list **listik_a, t_list **listik_b)
+int	pab(t_list **listik_a, t_list **listik_b, int flag)
 {
 	t_list	*add;
 	t_list	*next_b;
@@ -43,10 +47,14 @@ int	pab(t_list **listik_a, t_list **listik_b)
 	ft_lstadd_front(listik_a, add);
 	free((*listik_b));
 	(*listik_b) = next_b;
+	if (flag == 1)
+		write(1, "pa\n", 3);
+	else if (flag == 0)
+		write(1, "pb\n", 3);
 	return (1);
 }
 
-int	rab(t_list **listik)
+int	rab(t_list **listik, int flag)
 {
 	t_list	*new;
 
@@ -58,10 +66,14 @@ int	rab(t_list **listik)
 	ft_lstadd_back(*listik, new);
 	*listik = (*listik)->next;
 	new->next = NULL;
+	if (flag == 1)
+		write(1, "ra\n", 3);
+	else if (flag == 0)
+		write(1, "rb\n", 3);
 	return (1);
 }
 
-int	rrab(t_list **listik)
+int	rrab(t_list **listik, int flag)
 {
 	t_list	*new;
 	t_list	*head;
@@ -77,5 +89,9 @@ int	rrab(t_list **listik)
 	*listik = head;
 	ft_lstadd_front(listik, new);
 	last->next = NULL;
+	if (flag == 1)
+		write(1, "rra\n", 4);
+	else if (flag == 0)
+		write(1, "rrb\n", 4);
 	return (1);
 }

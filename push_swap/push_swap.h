@@ -47,11 +47,11 @@ char	*ft_strjoin(char *s1, char *s2);
 int		ft_strlen(char *str);
 void	parsing(t_struct *push);
 t_list	*ft_lstnew(int	x);
-void	ft_lstadd_back(t_list *listik, t_list *new_one);
-int		sab(t_list *listik);
+void	ft_lstadd_back(t_list *listik, t_list *new_one,int flag);
+int		sab(t_list *listik, int flag);
 void	ft_lstadd_front(t_list **listik, t_list *new_one);
-int		pab(t_list **listik_a, t_list **listik_b);
-int	rab(t_list **listik);
-int	rrab(t_list **listik);
+int		pab(t_list **listik_a, t_list **listik_b, int flag);
+int	rab(t_list **listik, int flag);
+int	rrab(t_list **listik, int flag);
 
 #endif
