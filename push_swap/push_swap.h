@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/05 18:42:02 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/08 21:33:12 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strjoin(char *s1, char *s2);
 int		ft_strlen(char *str);
 void	parsing(t_struct *push);
 t_list	*ft_lstnew(int	x);
-void	ft_lstadd_back(t_list *listik, t_list *new_one,int flag);
+void	ft_lstadd_back(t_list *listik, t_list *new_one);
 int		sab(t_list *listik, int flag);
 void	ft_lstadd_front(t_list **listik, t_list *new_one);
 int		pab(t_list **listik_a, t_list **listik_b, int flag);
