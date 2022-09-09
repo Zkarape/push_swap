@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 17:58:33 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/08 22:11:21 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/09 22:12:07 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,10 @@ void	fill_b(t_list *listik_a, t_list *listik_b)
 	counter = 0;
 	list_a = listik_a;
 	list_b = listik_b;
-	while (++i < 4)
+	while (++i < 5)
 	{
 		if (list_a->index <= counter)
 		{
-			printf("mta1\n");
 			if (!pab(&list_b, &list_a, 0))
 				ft_error("error appeared1!");
 			if(!rab(&list_b, 0))
@@ -54,15 +53,13 @@ void	fill_b(t_list *listik_a, t_list *listik_b)
 		}
 		else if (list_a->index <= counter + 2)
 		{
-			printf("mta2\n");
 			if (!pab(&list_b, &list_a, 0))
 				ft_error("error appeared3!");
 			counter++;
 		}
 		else
 		{
-			printf("mta3\n");
-			if(!rab(&list_b, 0))
+			if(!rab(&list_a, 1))
 				ft_error("error appeared4!");
 		}
 	}
@@ -79,8 +76,12 @@ void	algo_rythm(t_struct *push, t_list *listik_a, t_list *listik_b)
 	head = listik_a;
 	if (sorted_or_not(push, listik_a))
 		ft_error("already sorted");
-//	while (++i < push->len)
-		fill_b(listik_a, listik_b);
+	fill_b(listik_a, listik_b);
+//	while (listik_b)
+//	{
+//		printf("index_b == %d x == %d\n", listik_b->index, listik_b->x);
+//		listik_b = listik_b->next;
+//	}
 }
 
 int	main(int argc, char **argv)
@@ -97,22 +98,30 @@ int	main(int argc, char **argv)
 	parsing(push);
 	t_list	*a = malloc(sizeof(t_list));
 	t_list	*b = malloc(sizeof(t_list));
-	a->next = NULL;
-	b->next = NULL;
+	a = NULL;
+	b = NULL;
 //	b->index = 9;
 //	b->x = 10;
 	add_to_list(a, push);
-	indexing(a, push);
-	algo_rythm(push, a, b);
-	while (b)
-	{
-		printf("index_b == %d x == %d\n", b->index, b->x);
-		b = b->next;
-	}
-//	while (b)
+//	indexing(a, push);
+//	algo_rythm(push, a, b);
+//	while (head)
 //	{
-//		printf("index_b == %d x == %d\n", b->index, b->x);
-//		b = b->next;
+//		printf("head == %d x == %d\n", head->index, head->x);
+//		head = head->next;
+//	}
+//	rab(&a, 1);
+//	pab(&b, &a, 0);
+//	rab(&b, 0);	
+//	pab(&b, &a, 0);
+//	pab(&b, &a, 0);
+//	rab(&b, 0);
+//	pab(&b, &a, 0);
+//	rab(&b, 0);
+	i = 5;
+//	while (i--)
+//	{
+//		printf("index_a == %d x == %d\n", a->index, a->x);
 //	}
 //	while (a)
 //	{

@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:38:43 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/03 18:39:18 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/09 22:19:18 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,19 @@ void	ft_lstadd_front(t_list **listik, t_list *new)
 	*listik = new;
 }
 
-void	ft_lstadd_back(t_list *listik, t_list *new_one)
+int	ft_lstadd_back(t_list **listik, t_list *new_one)
 {
 	t_list	*last;
 
-	last = listik;
-	if (!last || !new_one)
-		return ;
-	if (listik == NULL)
-		listik = new_one;
-	else
+	if ((*listik) == NULL)
+		(*listik) = new_one;
+	last = *listik;
+	printf("%p\n", last);
+	while (last && last->next)
 	{
-		while (last && last->next)
-			last = last->next;
-		last->next = new_one;
+//		printf("%d\n", last->next->x);
+		last = last->next;
 	}
+	last->next = new_one;
+	return (1);
 }

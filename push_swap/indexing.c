@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 12:45:36 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/05 19:01:31 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/09 22:18:54 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ void	add_to_list(t_list *listik, t_struct *push)
 {
 	int	i;
 
-	i = 1;
-	listik->x = push->index[0];
+	i = 0;
 	while (i < push->len)
 	{
-		ft_lstadd_back(listik, ft_lstnew(push->index[i]));
+		ft_lstadd_back(&listik, ft_lstnew(push->index[i]));
+		//printf("i am still here\n");
 		i++;
 	}
 }
