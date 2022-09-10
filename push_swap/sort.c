@@ -6,13 +6,13 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 18:16:24 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/07 18:30:11 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/10 19:40:58 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort(t_struct *push)
+void	sort_to_max(t_struct *push)
 {
 	int	i;
 	int	tmp;
@@ -30,19 +30,3 @@ void	sort(t_struct *push)
 		i++;
 	}
 }
-
-//int	main(int ac, char **av)
-//{
-//	t_struct *push;
-//	int	i = 0;
-//	push = malloc(sizeof(t_struct));
-//	push->argc = ac;
-//	push->av = av;
-//	parsing(push);
-//	sort(push);
-//	while (i < push->len)
-//	{
-//		printf("ind == %d\n", push->index[i]);
-//		i++;
-//	}
-//}

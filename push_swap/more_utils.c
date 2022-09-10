@@ -1,43 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   indexing.c                                         :+:      :+:    :+:   */
+/*   more_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/25 12:45:36 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/10 19:38:37 by zkarapet         ###   ########.fr       */
+/*   Created: 2022/09/10 20:35:02 by zkarapet          #+#    #+#             */
+/*   Updated: 2022/09/10 21:35:48 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	add_to_list(t_list **listik, t_struct *push)
-{
-	int	i;
-
-	i = 0;
-	while (i < push->len)
-	{
-		ft_lstadd_back(listik, ft_lstnew(push->index[i]));
-		i++;
-	}
-}
-
-void	indexing(t_list *listik, t_struct *push)
+int	find_pos(t_list *listik, int x)
 {
 	int		i;
+	t_list	*move;
+
+	i = 0;
+	move = listik;
+	while (move)
+	{
+		if (move->x == x)
+			return (i);
+		move = move->next;
+		i++;
+	}
+	return (0);
+}
+
+int	find_max(t_list *listik)
+{
+	int		max;
 	t_list	*head;
 
 	head = listik;
-	sort_to_max(push);
-	i = 0;
-	while (head)
+	max = head->index;
+	while (head && head->next)
 	{
-		while (i < push->len && push->index[i] != head->x)
-			i++;
-		head->index = i;
-		i = 0;
+		if (head->next->index > head->index)
+			max = head->next->index;
 		head = head->next;
 	}
+	return (max);
 }

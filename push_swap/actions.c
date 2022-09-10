@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:33:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/09 21:31:47 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/10 19:35:15 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int	pab(t_list **listik_a, t_list **listik_b, int flag)
 	t_list	*next_b;
 
 	add = malloc(sizeof(t_list));
-//	if (!(*listik_b))
-//		return (0);
 	next_b = (*listik_b)->next;
 	if (!add)
 		return (0);
