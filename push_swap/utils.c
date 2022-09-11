@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:38:43 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/10 20:38:12 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:54:24 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	ft_lstadd_back(t_list **listik, t_list *new_one)
 
 	last = *listik;
 	if (!listik || !new_one)
-		return 0;
+		return (0);
 	if ((*listik) == NULL)
 		(*listik) = new_one;
 	else

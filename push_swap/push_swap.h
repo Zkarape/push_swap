@@ -6,12 +6,12 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/10 21:36:02 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/11 20:08:48 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <stdlib.h>
 # include <stdio.h>
@@ -24,17 +24,20 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-typedef	struct	s_struct
+typedef struct s_struct
 {
 	int		argc;
 	char	*str;
 	char	**av;
-	char	*main_str;
 	int		*index;
+	int		indx;
+	int		max;
+	int		i;
 	char	**arr;
-	int		min;
 	int		len;
-	int		*res;
+	int		size_b;
+	t_list	**list_a;
+	t_list	**list_b;
 }	t_struct;
 
 int		find_max(t_list *listik);
@@ -49,12 +52,12 @@ void	ft_error(char *s);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_strlen(char *str);
 void	parsing(t_struct *push);
-t_list	*ft_lstnew(int	x);
+t_list	*ft_lstnew(int x);
 int		ft_lstadd_back(t_list **listik, t_list *new_one);
 int		sab(t_list *listik, int flag);
 void	ft_lstadd_front(t_list **listik, t_list *new_one);
 int		pab(t_list **listik_a, t_list **listik_b, int flag);
-int	rab(t_list **listik, int flag);
-int	rrab(t_list **listik, int flag);
+int		rab(t_list **listik, int flag);
+int		rrab(t_list **listik, int flag);
 
 #endif
