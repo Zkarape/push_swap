@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handling.c                                   :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/19 20:48:27 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/12 18:48:44 by zkarapet         ###   ########.fr       */
+/*   Created: 2022/09/12 17:10:04 by zkarapet          #+#    #+#             */
+/*   Updated: 2022/09/12 18:55:57 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_strlen(char *s)
+void	freeing(t_list *listik)
 {
-	int	i;
+	t_list	*head;
 
-	i = -1;
-	while (s[++i])
-		;
-	return (i);
-}
-
-void	ft_error(char *s)
-{
-	write(2, s, ft_strlen(s));
-	exit(1);
+	head = listik;
+	while (listik)
+	{
+		free(listik);
+		listik = head->next;
+	}
 }

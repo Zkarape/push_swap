@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/11 20:08:48 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:40:00 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_struct
 	t_list	**list_b;
 }	t_struct;
 
+void	freeing(t_list *listik);
 int		find_max(t_list *listik);
 int		find_pos(t_list *listik, int x);
 int		ft_lst_size(t_list **listik);

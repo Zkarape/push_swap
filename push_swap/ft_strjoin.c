@@ -6,23 +6,12 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 20:20:02 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/08/27 18:24:37 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:40:33 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "push_swap.h"
 
-//int	ft_strlen(char *s)
-//{
-//	int	i;
-//
-//	i = 0;
-//	while (s[i])
-//		i++;
-//	return (i);
-//}
-//
 char	*ft_strjoin(char *s1, char *s2)
 {
 	int		i;

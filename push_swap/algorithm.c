@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 17:58:33 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/11 20:06:54 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/12 18:56:58 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,12 @@ void	algo_rythm(t_struct *push, t_list **listik_a, t_list **listik_b)
 		exit(0);
 	if (sorted_or_not(push, listik_a))
 		ft_error("already sorted");
-	while (!sorted_or_not(push, listik_a))
-	{
+//	while (!sorted_or_not(push, listik_a))
+//	{
 		fill_b(listik_a, listik_b, push);
 		fill_back_to_a(listik_a, listik_b, push);
-	}
+//	}
+	//while (1);
 }
 
 int	main(int argc, char **argv)
@@ -125,9 +126,8 @@ int	main(int argc, char **argv)
 	add_to_list(&a, push);
 	indexing(a, push);
 	algo_rythm(push, &a, &b);
-	while (a)
-	{
-		printf("index_a == %d x == %d\n", a->index, a->x);
-		a = a->next;
-	}
+//	free(push->index);
+//	freeing(a);
+//	freeing(b);
+	while (1);
 }
