@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/13 17:23:07 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/13 20:30:00 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,20 @@ typedef struct s_struct
 	char	**av;
 	int		*index;
 	int		indx;
+	int		indx1;
 	int		max;
+	int		max1;
 	int		i;
+	int		i1;
 	char	**arr;
 	int		len;
 	int		size_b;
+	int		size_a;
 	int		k;
 	t_list	**list_a;
 	t_list	**list_b;
+	t_list	**list_a1;
+//	t_list	**list_b1;
 }	t_struct;
 
 void	freeing(t_list *listik);

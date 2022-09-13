@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:38:43 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/12 18:12:31 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/13 21:03:27 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,10 @@ int	ft_lstadd_back(t_list **listik, t_list *new_one)
 	else
 	{
 		while (last && last->next)
+		{
+			printf("backi cikln em\n");
 			last = last->next;
+		}
 		last->next = new_one;
 	}
 	return (1);
