@@ -5,7 +5,7 @@ SRC = $(wildcard *.c)
 OBJS = $(SRC:.c=.o)
 
 GCC = cc
-FLAGS = -Wall -fsanitize=address -Werror -Wextra -g -ggdb3
+FLAGS = -Wall -Werror -Wextra
 
 $(NAME): $(OBJS)
 	$(GCC) $(FLAGS) $(OBJS) -o $(NAME) -I ./

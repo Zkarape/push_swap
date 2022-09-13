@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/12 18:40:00 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/13 17:23:07 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_struct
 	char	**arr;
 	int		len;
 	int		size_b;
+	int		k;
 	t_list	**list_a;
 	t_list	**list_b;
 }	t_struct;
@@ -55,10 +56,10 @@ int		ft_strlen(char *str);
 void	parsing(t_struct *push);
 t_list	*ft_lstnew(int x);
 int		ft_lstadd_back(t_list **listik, t_list *new_one);
-int		sab(t_list *listik, int flag);
+int		sab(t_list *listik, int flag, t_struct *push);
 void	ft_lstadd_front(t_list **listik, t_list *new_one);
-int		pab(t_list **listik_a, t_list **listik_b, int flag);
-int		rab(t_list **listik, int flag);
-int		rrab(t_list **listik, int flag);
+int		pab(t_list **listik_a, t_list **listik_b, int flag, t_struct *push);
+int		rab(t_list **listik, int flag, t_struct *push);
+int		rrab(t_list **listik, int flag, t_struct *push);
 
 #endif
