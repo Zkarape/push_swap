@@ -6,22 +6,24 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 12:45:36 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/10 19:38:37 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/15 22:15:01 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	add_to_list(t_list **listik, t_struct *push)
+void	add_to_list(t_list *listik, t_struct *push)
 {
 	int	i;
 
 	i = 0;
 	while (i < push->len)
 	{
-		ft_lstadd_back(listik, ft_lstnew(push->index[i]));
+		listik = ft_lstadd_back(listik, ft_lstnew(push->index[i]));
 		i++;
+		printf("%d\n", listik->x);
 	}
+//	printf("%p\n", listik);
 }
 
 void	indexing(t_list *listik, t_struct *push)

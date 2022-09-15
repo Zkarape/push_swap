@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 17:58:33 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/13 20:33:54 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/15 21:21:27 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,7 @@ int	sorted_or_not(t_struct *push, t_list **listik)
 	if (!(*listik))
 		return (2);
 	while (++i <= push->len && head && push->index[i] == head->x)
-	{
-		printf("sortedi cikln em");
 		head = head->next;
-	}
-	printf("i == %d len == %d\n", i, push->len);
 	if (i == push->len)
 		return (1);
 	return (0);
@@ -75,23 +71,21 @@ void	fill_b(t_list **listik_a, t_list **listik_b, t_struct *push)
 
 void	sort_a_in_place(t_list **listik_a, t_list **listik_b, t_struct *push)
 {
-//	fill_b(listik_a, listik_b, push);
+	fill_b(listik_a, listik_b, push);
 	t_list *a = *listik_a;
 	t_list *b = *listik_b;
-	printf("address == %p\n", a);
 	while (a)
 	{
-		printf("%d\n", a->index);
+//		printf("index == %d\n", a->index);
 		a = a->next;
 	}
-	while (b)
-	{
-		printf("%d\n", b->index);
-		b = b->next;
-	}
+//	while (b)
+//	{
+//		printf("%d\n", b->index);
+//		b = b->next;
+//	}
 	push->i1 = -1;
 	push->list_a1 = listik_a;
-//	push->list_b1 = listik_b;
 	push->size_a = ft_lst_size(listik_a);
 	while (push->list_a1 && (*push->list_a1))
 	{
@@ -102,8 +96,11 @@ void	sort_a_in_place(t_list **listik_a, t_list **listik_b, t_struct *push)
 		if (push->indx1 <= push->size_a / 2)
 		{
 			while (++push->i1 < push->indx1)
+			{
+				printf("Anverj em \n");
 				if (!rab(push->list_a1, 0, push))
 					ft_error("error appeared2!");
+			}
 		}
 		else
 			while (++push->i1 < push->size_a - push->indx1)
@@ -114,14 +111,12 @@ void	sort_a_in_place(t_list **listik_a, t_list **listik_b, t_struct *push)
 
 void	fill_back_to_a(t_list **listik_a, t_list **listik_b, t_struct *push)
 {
-	printf("vat aa");
 	push->i = -1;
 	push->list_a = listik_a;
 	push->list_b = listik_b;
 	push->size_b = ft_lst_size(listik_b);
 	while (push->list_b && (*push->list_b))
 	{
-		printf("back to ainn em");
 		push->i = -1;
 		push->max = find_max(*push->list_b);
 		push->indx = find_pos(*push->list_b, push->max);
@@ -131,8 +126,11 @@ void	fill_back_to_a(t_list **listik_a, t_list **listik_b, t_struct *push)
 		if (push->indx <= push->size_b / 2)
 		{
 			while (++push->i < push->indx)
+			{
+				printf("Anverj em back to a\n");
 				if (!rab(push->list_b, 0, push))
 					ft_error("error appeared2!");
+			}
 		}
 		else
 			while (++push->i < push->size_b - push->indx)
@@ -157,7 +155,7 @@ void	algo_rythm(t_struct *push, t_list **listik_a, t_list **listik_b)
 //		ft_error("already sorted");
 //	while (!sorted_or_not(push, listik_a))
 //	{
-		sort_a_in_place(listik_a, listik_b, push);
+//		sort_a_in_place(listik_a, listik_b, push);
 		fill_back_to_a(listik_a, listik_b, push);
 //	}
 }
@@ -170,8 +168,6 @@ int	main(int argc, char **argv)
 	t_list		*b;
 
 	a = malloc(sizeof(t_list));
-//	if (!a)
-//		return 
 	b = malloc(sizeof(t_list));
 	push = malloc(sizeof(t_struct));
 	i = -1;
@@ -182,14 +178,15 @@ int	main(int argc, char **argv)
 	push->av = argv;
 	push->argc = argc;
 	parsing(push);
-	add_to_list(&a, push);
+	add_to_list(a, push);
+	printf("i am that girl %p\n", a);
 	indexing(a, push);
-	algo_rythm(push, &a, &b);
-//	while (a)
-///	{
-//		printf("%d\n", a->index);
-//		a = a->next;
-//	}
+//	algo_rythm(push, &a, &b);
+	while (a)
+	{
+		printf("%d\n", a->index);
+		a = a->next;
+	}
 //	printf("k == %d\n", push->k);
 //	free(push->index);
 //	freeing(a);

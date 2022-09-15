@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:38:43 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/13 21:03:27 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/15 22:05:03 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,25 +55,38 @@ void	ft_lstadd_front(t_list **listik, t_list *new)
 	*listik = new;
 }
 
-int	ft_lstadd_back(t_list **listik, t_list *new_one)
-{
-	t_list	*last;
+//int	ft_lstadd_back(t_list **listik, t_list *new_one)
+//{
+//	t_list	*last;
+//
+//	last = *listik;
+//	if (!listik || !new_one)
+//		return (0);
+//	if ((*listik) == NULL)
+//		(*listik) = new_one;
+//	else
+//	{
+//		while (last && last->next)
+//		{
+////			printf("backi cikln em\n");
+//			last = last->next;
+//		}
+//		last->next = new_one;
+//	}
+//	return (1);
+//}
 
-	last = *listik;
-	if (!listik || !new_one)
-		return (0);
-	if ((*listik) == NULL)
-		(*listik) = new_one;
-	else
-	{
-		while (last && last->next)
-		{
-			printf("backi cikln em\n");
-			last = last->next;
-		}
-		last->next = new_one;
-	}
-	return (1);
+t_list	*ft_lstadd_back(t_list *listik, t_list *new)
+{
+	t_list	*ptr;
+	
+	ptr = listik;
+	if (!ptr)
+		return (new);
+	while (ptr->next)
+		ptr = ptr->next;
+	ptr->next = new;
+	return (listik);
 }
 
 int	ft_lst_size(t_list **listik)
