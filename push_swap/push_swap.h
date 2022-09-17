@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/15 22:03:39 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/17 18:13:05 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ typedef struct s_struct
 void	freeing(t_list *listik);
 int		find_max(t_list *listik);
 int		find_pos(t_list *listik, int x);
-int		ft_lst_size(t_list **listik);
-void	add_to_list(t_list *listik, t_struct *push);
+int		ft_lst_size(t_list *listik);
+void	add_to_list(t_list **listik, t_struct *push);
 void	indexing(t_list *listik, t_struct *push);
 void	sort_to_max(t_struct *push);
 char	**ft_split(char *str, char c);

@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:38:43 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/15 22:05:03 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/17 19:43:26 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,13 @@ t_list	*ft_lstadd_back(t_list *listik, t_list *new)
 	return (listik);
 }
 
-int	ft_lst_size(t_list **listik)
+int	ft_lst_size(t_list *listik)
 {
 	t_list	*list;
 	int		count;
 
 	count = 0;
-	list = *listik;
+	list = listik;
 	while (list)
 	{
 		count++;
