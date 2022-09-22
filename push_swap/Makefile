@@ -5,7 +5,7 @@ SRC = $(wildcard *.c)
 OBJS = $(SRC:.c=.o)
 
 GCC = cc
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -g -ggdb3
 
 $(NAME): $(OBJS)
 	$(GCC) $(FLAGS) $(OBJS) -o $(NAME) -I ./

@@ -141,8 +141,6 @@ int	main(int argc, char **argv)
 	t_list		*a;
 	t_list		*b;
 
-	a = malloc(sizeof(t_list));
-	b = malloc(sizeof(t_list));
 	push = malloc(sizeof(t_struct));
 	i = -1;
 	a = NULL;
@@ -162,8 +160,13 @@ int	main(int argc, char **argv)
 		//a = a->next;
 	}
 //	printf("k == %d\n", push->k);
-//	free(push->index);
-//	freeing(a);
-//	freeing(b);
+	free(push->index);
+	free(push->str);
+	while (push->arr[++i])
+		free(push->arr[i]);
+	free(push->arr);
+	free(push);
+	freeing(a);
+	freeing(b);
 //	while (1);
 }

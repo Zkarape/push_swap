@@ -46,14 +46,14 @@ int	check_doubles(t_struct *push)
 
 void	parsing(t_struct *push)
 {
-	int	i;
-	int	k;
+	int		i;
+	int		k;
 
 	k = -1;
-	push->str = "";
+	push->str = NULL;
 	i = 1;
 	while (i < push->argc)
-	{	
+	{
 		push->str = ft_strjoin(push->str, push->av[i]);
 		push->str = ft_strjoin(push->str, " ");
 		i++;

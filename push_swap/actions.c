@@ -55,7 +55,9 @@ int	pab(t_list **listik_a, t_list **listik_b, int flag, t_struct *push)
 int	rab(t_list **listik, int flag, t_struct *push)
 {
 	t_list	*new;
+	t_list	*temp;
 
+	temp = *listik;
 	new = malloc(sizeof(t_list));
 	if (!(*listik))
 		return (0);
@@ -63,9 +65,9 @@ int	rab(t_list **listik, int flag, t_struct *push)
 		return (0);
 	new->x = (*listik)->x;
 	new->index = (*listik)->index;
-	free(*listik);
 	*listik = ft_lstadd_back(*listik, new);
 	*listik = (*listik)->next;
+	free(temp);
 	new->next = NULL;
 	if (flag == 1)
 		write(1, "ra\n", 3);

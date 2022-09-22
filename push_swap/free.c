@@ -15,11 +15,13 @@
 void	freeing(t_list *listik)
 {
 	t_list	*head;
+	t_list	*temp;
 
 	head = listik;
 	while (listik)
 	{
-		free(listik);
-		listik = head->next;
+		temp = listik;
+		listik = listik->next;
+		free(temp);
 	}
 }
