@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 17:58:33 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/22 21:21:08 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/22 21:41:45 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,7 +156,7 @@ int	main(int argc, char **argv)
 	indexing(a, push);
 //	fill_b(&a, &b, push);
 	algo_rythm(push, &a, &b);
-	while (1)
+//	while (1)
 	{
 		//printf("%d\n", a->index);
 		//a = a->next;
