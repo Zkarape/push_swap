@@ -6,12 +6,11 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 17:58:33 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/22 21:41:45 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/22 22:43:04 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <math.h>
 
 int	sorted_or_not(t_struct *push, t_list **listik)
 {
@@ -32,102 +31,59 @@ int	sorted_or_not(t_struct *push, t_list **listik)
 void	fill_b(t_list **listik_a, t_list **listik_b, t_struct *push)
 {
 	int	counter;
-	int	i;
-	int	x;
 
 	counter = 0;
-	i = 0;
 	if (push->len > 100)
-		x = 30;
+		push->k = 30;
 	else
-		x = 15;
+		push->k = 15;
 	while (counter < push->len)
 	{
 		if ((*listik_a)->index <= counter)
 		{
-			if (!pab(listik_b, listik_a, 0, push))
-				ft_error("error appeared1!");
-			if (!rab(listik_b, 0, push))
-				ft_error("error appeared2!");
+			pab(listik_b, listik_a, 0, push);
+			rab(listik_b, 0, push);
 			counter++;
 		}
-		else if ((*(listik_a))->index <= counter + x)
+		else if ((*(listik_a))->index <= counter + push->k)
 		{
-			if (!pab(listik_b, listik_a, 0, push))
-				ft_error("error appeared3!");
+			pab(listik_b, listik_a, 0, push);
 			counter++;
 		}
 		else
-			if (!rab(listik_a, 1, push))
-				ft_error("error appeared4!");
+			rab(listik_a, 1, push);
 	}
-//	push->list_b = listik_b;
-//	while (*push->list_b)
-//	{
-//		printf("index == %d\n", (*push->list_b)->index);
-//		*push->list_b = (*push->list_b)->next;
-//	}
 }
 
 void	fill_back_to_a(t_list **listik_a, t_list **listik_b, t_struct *push)
 {
-	if (sorted_or_not(push, listik_b))
-		ft_error("sorted");
-	int	max_pos;
-	int	pos;
-	int	i = -1;
+	push->i = -1;
 	push->list_a = listik_a;
 	push->list_b = listik_b;
-	push->size_b = ft_lst_size(*listik_b);
-//	printf("b == %d\n",push->size_b);
-	while (*listik_b && listik_b && push->size_b)
+	while (push->list_b && (*push->list_b))
 	{
-		max_pos = find_pos(*listik_b, push->size_b - 1);
-		if (max_pos	<= push->size_b / 2)
+		push->i = -1;
+		push->size_b = ft_lst_size(*listik_b);
+		push->indx = find_pos(*push->list_b, push->size_b - 1);
+		if (push->indx <= push->size_b / 2)
 		{
-			while (max_pos != 0)
-			{
-				rab(listik_b, 0, push);
-				max_pos = find_pos(*listik_b, push->size_b - 1);
-			}
+			while (++push->i < push->indx)
+				rab(push->list_b, 0, push);
 		}
-		else
+		else if (push->indx > push->size_b / 2)
 		{
-			while (max_pos != 0)
-			{
-				rrab(listik_b, 0, push);
-				max_pos = find_pos(*listik_b, push->size_b - 1);
-			}
+			while (++push->i < push->size_b - push->indx)
+				rrab(push->list_b, 0, push);
 		}
-//		while (!max_pos)
-//		{
-//			if (max_pos	< push->size_b / 2)
-//				rab(listik_b, 0, push);
-//			else
-//				rrab(listik_b, 0, push);
-//		}
-		pab(listik_a, listik_b, 1, push);
-		push->size_b--;
+		if (!push->indx)
+			pab(push->list_a, push->list_b, 1, push);
 	}
-//	while (*push->list_a)
-//	{
-//		printf("index == %d\n", (*push->list_a)->index);
-//		(*push->list_a) = (*push->list_a)->next;
-//	}
 }
 
 void	algo_rythm(t_struct *push, t_list **listik_a, t_list **listik_b)
 {
-	int		i;
-	int		counter;
-	t_list	**head;
-
-	push->k = 0;
-	i = -1;
-	counter = 0;
-	head = listik_a;
 	if (sorted_or_not(push, listik_a) == 2)
-		exit(0);
+		return ;
 	if (sorted_or_not(push, listik_a))
 		ft_error("already sorted");
 	fill_b(listik_a, listik_b, push);
@@ -152,14 +108,7 @@ int	main(int argc, char **argv)
 	parsing(push);
 	add_to_list(&a, push);
 	indexing(a, push);
-//	fill_b(&a, &b, push);
 	algo_rythm(push, &a, &b);
-//	while (1)
-	{
-		//printf("%d\n", a->index);
-		//a = a->next;
-	}
-//	printf("k == %d\n", push->k);
 	free(push->index);
 	free(push->str);
 	while (push->arr[++i])
@@ -168,5 +117,4 @@ int	main(int argc, char **argv)
 	free(push);
 	freeing(a);
 	freeing(b);
-//	while (1);
 }

@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/20 19:19:12 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/22 22:37:10 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ typedef struct s_struct
 	t_list	**list_a;
 	t_list	**list_b;
 	t_list	**list_a1;
-//	t_list	**list_b1;
 }	t_struct;
 
 void	freeing(t_list *listik);

@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:35:02 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/22 19:08:24 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/22 22:41:06 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	find_pos(t_list *listik, int x)
 	move = listik;
 	while (move)
 	{
-	//	printf("groxy tani qez\n");
 		if (move->index == x)
 			return (i);
 		move = move->next;
