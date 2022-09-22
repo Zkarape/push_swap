@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:33:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/17 20:01:36 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/22 21:39:33 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	rab(t_list **listik, int flag, t_struct *push)
 		return (0);
 	new->x = (*listik)->x;
 	new->index = (*listik)->index;
+	free(*listik);
 	*listik = ft_lstadd_back(*listik, new);
 	*listik = (*listik)->next;
 	new->next = NULL;

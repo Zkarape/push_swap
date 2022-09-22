@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:35:02 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/17 19:46:40 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/22 19:08:24 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	find_pos(t_list *listik, int x)
 	move = listik;
 	while (move)
 	{
+	//	printf("groxy tani qez\n");
 		if (move->index == x)
 			return (i);
 		move = move->next;
@@ -35,7 +36,17 @@ int	find_max(t_list *listik)
 	t_list	*head;
 
 	head = listik;
+	if (!head)
+	{
+		printf("NULL\n");
+		return (0);
+	}
 	max = head->index;
+	if (!head)
+	{
+		printf("NULL\n");
+		return (0);
+	}
 	while (head && head->next)
 	{
 		if (head->next->index > max)
