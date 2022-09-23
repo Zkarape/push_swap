@@ -6,11 +6,27 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 20:35:02 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/22 22:41:06 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:53:48 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	sorted_or_not(t_struct *push, t_list **listik)
+{
+	int		i;
+	t_list	*head;
+
+	i = -1;
+	head = *listik;
+	if (!(*listik))
+		return (1);
+	while (++i < push->len && head && push->index[i] == head->x)
+		head = head->next;
+	if (i == push->len)
+		return (1);
+	return (0);
+}
 
 int	find_pos(t_list *listik, int x)
 {

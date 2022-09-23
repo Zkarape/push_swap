@@ -6,17 +6,17 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 20:38:43 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/22 22:41:50 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/23 19:00:45 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(const char *str)
+long long	ft_atoi(const char *str)
 {
-	unsigned int	res;
-	int				min;
-	int				i;
+	long long	res;
+	int			min;
+	int			i;
 
 	min = 1;
 	res = 0;
@@ -34,6 +34,8 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
+	if ((res * min) > 2147483647 || (res * min) < -2147483648)
+		ft_error("INT IS NOT UNLIMIT!!");
 	return (res * min);
 }
 

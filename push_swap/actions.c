@@ -6,13 +6,13 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/31 18:33:50 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/22 21:39:33 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/23 14:37:12 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sab(t_list *listik, int flag, t_struct *push)
+int	sab(t_list *listik, int flag)
 {
 	t_list	*s;
 
@@ -31,7 +31,7 @@ int	sab(t_list *listik, int flag, t_struct *push)
 	return (0);
 }
 
-int	pab(t_list **listik_a, t_list **listik_b, int flag, t_struct *push)
+int	pab(t_list **listik_a, t_list **listik_b, int flag)
 {
 	t_list	*add;
 	t_list	*next_b;
@@ -52,7 +52,7 @@ int	pab(t_list **listik_a, t_list **listik_b, int flag, t_struct *push)
 	return (1);
 }
 
-int	rab(t_list **listik, int flag, t_struct *push)
+int	rab(t_list **listik, int flag)
 {
 	t_list	*new;
 	t_list	*temp;
@@ -76,7 +76,7 @@ int	rab(t_list **listik, int flag, t_struct *push)
 	return (1);
 }
 
-int	rrab(t_list **listik, int flag, t_struct *push)
+int	rrab(t_list **listik, int flag)
 {
 	t_list	*new;
 	t_list	*head;

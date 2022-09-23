@@ -6,7 +6,7 @@
 /*   By: zkarapet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 19:17:34 by zkarapet          #+#    #+#             */
-/*   Updated: 2022/09/13 20:14:13 by zkarapet         ###   ########.fr       */
+/*   Updated: 2022/09/23 18:46:51 by zkarapet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ int	check_doubles(t_struct *push)
 	{
 		j = i;
 		while (++j < push->len)
+		{
 			if (push->index[i] == push->index[j])
 				return (0);
+		}
 	}
 	return (1);
 }
@@ -59,12 +61,10 @@ void	parsing(t_struct *push)
 		i++;
 	}
 	push->arr = ft_split(push->str, ' ');
-	if (!push->arr)
-		return ;
 	i = -1;
 	while (push->arr[++i])
-		if (!nothing_but_int(push->arr[i]))
-			ft_error("not int");
+		if (!nothing_but_int(push->arr[i]) || ft_strlen(push->arr[i]) > 10)
+			ft_error("NOT ACCEPTED!!");
 	push->index = malloc(sizeof(int) * i);
 	while (++k < i)
 		push->index[k] = ft_atoi(push->arr[k]);
